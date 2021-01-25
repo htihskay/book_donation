@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-12">
+            
+            <h3><a href="/cs">Computer-Science</a></h3>
+            <div class="row">
+                {% for product in cs %}
+                {% if product.category == 'cs' %}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card mb-4">
+                        <a href="/{{product.category}}?view={{product.id}}">
+                            <div class="card-img-top id_{{product.id}}"
+                                 style="background: url('static/image/product/{{product.category}}/{{product.picture}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% "></div>
+                        </a>
+                        <div class="card-body">
+                            <h4><a class="card-title" href="javascript:void();">{{ product.bname}}</a></h4>
+                            <h5>Author:{{product.author}}</h5>
+                            <span class="text-warning">{{product.description}}</span>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!-- <div class="border p-4 mb-4" style="height: 350px">
+                <img class="w-100 h-100" src="/static/image/other/bodyspray.jpg" alt="New York">
+            </div> -->
+           
+            <h3><a href="/ec">Electronic and Communication</a></h3>
+            <div class="row">
+                {% for product in ec %}
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card mb-4">
+                        <a href="/{{product.category}}?view={{product.id}}">
+                            <div class="card-img-top id_{{product.id}}"
+                                 style="background: url('static/image/product/{{product.category}}/{{product.picture}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% "></div>
+                        </a>
+                        <div class="card-body">
+                            <h4><a class="card-title" href="javascript:void();">{{ product.bname}}</a></h4>
+                            <h5>Author:{{product.author}}</h5>
+                            <span class="text-warning">{{product.description}}</span>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                {% endfor %}
+            </div>
+            <!--<div class="border p-4 mb-4" style="height: 350px">
+                <img class="w-100 h-100" src="/static/image/other/watchwallpaper.jpg" alt="New York">
+            </div> -->
+            
+            <h3><a href="/me">Mechanical</a></h3>
+             <div class="row">
+                {% for product in me %}
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card mb-4">
+                        <a href="/{{product.category}}?view={{product.id}}">
+                            <div class="card-img-top id_{{product.id}}"
+                                 style="background: url('static/image/product/{{product.category}}/{{product.picture}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% "></div>
+                        </a>
+                        <div class="card-body">
+                            <h4><a class="card-title" href="javascript:void();">{{ product.bname}}</a></h4>
+                            <h5>Author:{{product.author}}</h5>
+                            <span class="text-warning">{{product.description}}</span>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                {% endfor %}
+            </div>
+            <!--<div class="border p-4 mb-4" style="height: 350px">
+                <img class="w-100 h-100" src="/static/image/other/bodyspray.jpg" alt="New York">
+            </div> -->
+            
+            <h3><a href="/cv">Civil Engineering</a></h3>
+             <div class="row">
+                {% for product in cv %}
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card mb-4">
+                        <a href="/{{product.category}}?view={{product.id}}">
+                            <div class="card-img-top id_{{product.id}}"
+                                 style="background: url('static/image/product/{{product.category}}/{{product.picture}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% "></div>
+                        </a>
+                        <div class="card-body">
+                            <h4><a class="card-title" href="javascript:void();">{{ product.bname}}</a></h4>
+                            <h5>Author:{{product.author}}</h5>
+                            <span class="text-warning">{{product.description}}</span>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                {% endfor %}
+            </div>
+            <!--<div class="border p-4 mb-4" style="height: 350px">
+                <img class="w-100 h-100" src="/static/image/other/t-shirt-wallpaper.jpg" alt="New York">
+            </div> -->
+            
+
+        </div>
+        <!-- /.col-lg-9 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+{% endblock %}

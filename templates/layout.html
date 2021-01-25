@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Book Donation</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="{{ url_for('static', filename='image/other/logo_icon.png') }}" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="static/vendor/bootstrap.min.css">
+        <script src="static/vendor/jquery/jquery.min.js"></script>
+        <script src="static/vendor/popper.min.js"></script>
+        <script src="static/vendor/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body style="background-image: url({{ url_for('static', filename='image/') }}); margin-top: 57px">
+        {% include 'includes/_navbar.html' %}
+        <div class="container">
+            {% block body %}  {% endblock %}
+        </div>
+        <script src="static/vendor/bootstrap.min.js"></script>
+    </body>
+    {% include 'includes/_footer.html' %}
+</html>

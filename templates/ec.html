@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <h1 class="my-4">Electonics-Communication</h1>
+            <div class="list-group">
+                <a href="/cs" class="list-group-item">Computer-Science</a>
+                <a href="/ec" class="list-group-item active">Electonics-Communication</a>
+                <a href="/me" class="list-group-item">Mechanical</a>
+                <a href="/cv" class="list-group-item ">Civil</a>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-9">
+            {% include 'includes/_flashmsg.html' %}
+            
+            <div class="row">
+                {% for product in ec %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
+                     <div class="card h-100">
+                        <a href="/ec?view={{product.b_id}}">
+                            <div class="card-img-top"
+                                 style="background: url('static/image/product/{{product.category}}/{{product.picture}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% "></div>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/ec?view={{product.b_id}}">{{ product.bname}}</a>
+                            </h5>
+                            
+                            <h5>Author:{{product.author}}</h5>
+                            <span class="text-warning"></span>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">{{product.description}}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+{% endblock %}

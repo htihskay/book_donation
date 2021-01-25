@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
+    <a class="navbar-brand" href="/">Books-Donation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+       
+        <ul class="navbar-nav ml-auto">
+            {% if session.logged_in %}
+            <li class="nav-item"><a href="/" class="nav-link"><span class="btn btn-info"> Home</span> </a></li>
+            <li class="nav-item"><a href="/profile?user={{session.uid}}" class="nav-link"><span class="btn btn-success"> Edit</span></a>
+            </li>
+            <li class="nav-item"><a href="/out" class="nav-link"><span class="btn btn-danger"> Logout</span> </a></li>
+            {% else %}
+             <li class="nav-item"><a href="/admin" class="nav-link"><span class="btn btn-primary" style="" > Admin</span></a></li>
+            <li class="nav-item"><a href="/" class="nav-link"><span class="btn btn-info"> Home</span></a></li>
+            
+            <li class="nav-item"><a href="/donate" class="nav-link"><span class="btn btn-danger" style=""> Donor Signup</span></a></li>    
+            <li class="nav-item"><a href="/donor_login" class="nav-link"><span class="btn btn-danger" style=""> Donor Login</span></a></li>
+            <li class="nav-item"><a href="/register" class="nav-link"><span class="btn btn-success" style=""> User Signup</span> </a></li>    
+            <li class="nav-item"><a href="/login" class="nav-link"><span class="btn btn-success" style=""> User Login</span></a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
